@@ -11,6 +11,13 @@
 **Function:** f(x) = x³ - 4x² + 6x - 24  
 **Interval:** [2, 4]
 
+### Console Output
+```
+--- Bisection Method for f(x) = x^3 - 4x^2 + 6x - 24 ---
+Attempting to find root in interval [2, 4] with tolerance 1e-06
+Exact root found at initial upper bound: 4.00000000
+```
+
 ### Result
 **Exact root found at initial upper bound:** 4.00000000
 
@@ -19,6 +26,15 @@
 ## Question 2: Bisection Method
 **Function:** f(x) = sin(x) - 0.5  
 **Interval:** [0, 1]
+
+### Console Output
+```
+--- Bisection Method for f(x) = sin(x) - 0.5 ---
+Attempting to find root in interval [0, 1] with tolerance 1e-06
+Initial check passed: f(a) = -0.500000 and f(b) = 0.341471 have opposite signs.
+Convergence is guaranteed within the interval [0, 1] given sufficient iterations.
+Converged after 17 iterations. Approximate root: 0.52359772
+```
 
 ### Result
 - **Converged after 17 iterations**
@@ -53,6 +69,15 @@
 **Function:** f(x) = ln(x) - 1  
 **Interval:** [1, 3]
 
+### Console Output
+```
+--- False Position Method for f(x) = ln(x) - 1 ---
+Attempting to find root in interval [1, 3] with tolerance 1e-06
+Initial check passed: f(a) = -1.000000 and f(b) = 0.098612 have opposite signs.
+Convergence is generally guaranteed within [1, 3], potentially faster than bisection.
+Converged after 12 iterations. Approximate root: 2.71828352
+```
+
 ### Result
 - **Converged after 12 iterations**
 - **Approximate root:** 2.71828352 (≈ e)
@@ -81,6 +106,15 @@
 **Function:** f(x) = e^x - 5  
 **Interval:** [0, 2]
 
+### Console Output
+```
+--- False Position Method for f(x) = e^x - 5 ---
+Attempting to find root in interval [0, 2] with tolerance 1e-06
+Initial check passed: f(a) = -4.000000 and f(b) = 2.389056 have opposite signs.
+Convergence is generally guaranteed within [0, 2], potentially faster than bisection.
+Converged after 10 iterations. Approximate root: 1.60943783
+```
+
 ### Result
 - **Converged after 10 iterations**
 - **Approximate root:** 1.60943783 (≈ ln(5))
@@ -106,6 +140,17 @@
 **Function:** f(x) = x⁴ - 2x³ + x - 1  
 **Initial Guess:** x₀ = 1
 
+### Console Output
+```
+--- Newton's Method for f(x) = x^4 - 2x^3 + x - 1 ---
+Attempting to find root with initial guess x0 = 1 and tolerance 1e-06
+Initial check passed: Derivative f'(x0) = -1.000000 is not close to zero.
+Convergence for Newton's method is quadratic if the initial guess is sufficiently close to a root where f'(root) != 0.
+It may diverge if the initial guess is far from a root, or if f'(x) is close to zero near the root.
+Warning: Newton's method did not converge to the specified tolerance (1e-06) after 100 iterations.
+Current approximation: 1.00000000
+```
+
 ### Result
 ⚠️ **WARNING:** Did not converge after 100 iterations  
 **Current approximation:** 1.00000000
@@ -123,15 +168,27 @@ The method oscillates between x = 0 and x = 1, indicating:
 | 1         | 1          | -1          | -1          | 0.00000000 |
 | 2         | 0.00000000 | -1.00000000 | 1.00000000  | 1.00000000 |
 | 3         | 1.00000000 | -1.00000000 | -1.00000000 | 0.00000000 |
+| 4         | 0.00000000 | -1.00000000 | 1.00000000  | 1.00000000 |
+| 5         | 1.00000000 | -1.00000000 | -1.00000000 | 0.00000000 |
 | ...       | ...        | ...         | ...         | ...        |
 
-*(Pattern continues indefinitely)*
+*(Pattern continues indefinitely for 100 iterations)*
 
 ---
 
 ## Question 6: Newton's Method
 **Function:** f(x) = tan(x) - x  
 **Initial Guess:** x₀ = 1
+
+### Console Output
+```
+--- Newton's Method for f(x) = tan(x) - x ---
+Attempting to find root with initial guess x0 = 1 and tolerance 1e-06
+Initial check passed: Derivative f'(x0) = 2.425519 is not close to zero.
+Convergence for Newton's method is quadratic if the initial guess is sufficiently close to a root where f'(root) != 0.
+It may diverge if the initial guess is far from a root, or if f'(x) is close to zero near the root.
+Converged after 13 iterations. Approximate root: 0.00698419
+```
 
 ### Result
 - **Converged after 13 iterations**
@@ -161,6 +218,16 @@ The method oscillates between x = 0 and x = 1, indicating:
 **Function:** f(x) = x² - 2  
 **Initial Guesses:** x₀ = 1, x₁ = 2
 
+### Console Output
+```
+--- Secant Method for f(x) = x^2 - 2 ---
+Attempting to find root with initial guesses x0 = 1, x1 = 2 and tolerance 1e-06
+Initial check passed: Initial guesses are distinct, and the initial slope is not too flat.
+Secant method convergence is super-linear if initial guesses are sufficiently close to a root where f'(root) != 0.
+It may diverge if initial guesses are far from a root or if the function's slope is near zero.
+Converged after 6 iterations. Approximate root: 1.41421356
+```
+
 ### Result
 - **Converged after 6 iterations**
 - **Approximate root:** 1.41421356 (≈ √2)
@@ -182,6 +249,16 @@ The method oscillates between x = 0 and x = 1, indicating:
 **Function:** f(x) = e⁻ˣ - x  
 **Initial Guesses:** x₀ = 0, x₁ = 1
 
+### Console Output
+```
+--- Secant Method for f(x) = e^(-x) - x ---
+Attempting to find root with initial guesses x0 = 0, x1 = 1 and tolerance 1e-06
+Initial check passed: Initial guesses are distinct, and the initial slope is not too flat.
+Secant method convergence is super-linear if initial guesses are sufficiently close to a root where f'(root) != 0.
+It may diverge if initial guesses are far from a root or if the function's slope is near zero.
+Converged after 5 iterations. Approximate root: 0.56714329
+```
+
 ### Result
 - **Converged after 5 iterations**
 - **Approximate root:** 0.56714329
@@ -201,6 +278,15 @@ The method oscillates between x = 0 and x = 1, indicating:
 ## Question 9: Fixed Point Iteration
 **Function:** g(x) = √(6 + x)  
 **Initial Guess:** x₀ = 2
+
+### Console Output
+```
+--- Fixed Point Iteration for g(x) = sqrt(6 + x) ---
+Attempting to find fixed point with initial guess x0 = 2 and tolerance 1e-06
+Initial check passed: |g'(x0)| = |0.17677670| < 1 at x0 = 2.00000000.
+Local convergence is likely if g(x) maps an interval around 2 into itself and |g'(x)| < 1 throughout that interval.
+Converged after 9 iterations. Approximate fixed point: 2.99999990
+```
 
 ### Result
 - **Converged after 9 iterations**
@@ -240,6 +326,16 @@ With x₀ = 2, the method converged to x = 3.
 ## Question 10: Fixed Point Iteration
 **Function:** g(x) = 1 + ln(x)  
 **Initial Guess:** x₀ = 2
+
+### Console Output
+```
+--- Fixed Point Iteration for g(x) = 1 + ln(x) ---
+Attempting to find fixed point with initial guess x0 = 2 and tolerance 1e-06
+Initial check passed: |g'(x0)| = |0.50000000| < 1 at x0 = 2.00000000.
+Local convergence is likely if g(x) maps an interval around 2 into itself and |g'(x)| < 1 throughout that interval.
+Warning: Fixed Point Iteration did not converge to the specified tolerance (1e-06) after 100 iterations.
+Current approximation: 1.01985723
+```
 
 ### Result
 ⚠️ **WARNING:** Did not converge after 100 iterations  
